@@ -9,20 +9,20 @@ Proyecto para generar señales de noticias financieras y usarlas junto con datos
 - `scores_news/`: notebooks de procesamiento de noticias.
   - `read_data_news.ipynb`: del dataset proveniente del paper de FINSPID (descargado de https://huggingface.co/datasets/Zihan1004/FNSPID/blob/main/Stock_news/nasdaq_exteral_data.csv) y análisis y filtrado inicial de la información.
   - `eda_y_seleccion_sub_dataset.ipynb`: 
-    -Lectura del subdataset obtenido en el notebbok anterior y análisis de cantidad de noticias por ticker y en el tiempo.
+    - Lectura del subdataset obtenido en el notebbok anterior y análisis de cantidad de noticias por ticker y en el tiempo.
     - Selección del subset de tickers y período de tiempo para trabajar en los siguientes steps del proyecto.
   - `deteccion_tickers.ipynb`: pipeline para la detección de tickers presentes de forma explícita en las noticias a partir de un patrón Regex.
   - `deteccion_sent_financiero_con_finbert.ipynb`: scoring de sentimiento con `ProsusAI/finbert` para las noticias con 512 tokens o menos.
   - `recomendacion_ollama.ipynb`: recomendación (1–5) con un modelo de Ollama (modelo: martain7r/finance-llama-8b:fp16) mediante un prompt que devuelve un valor de 1 a 5 para cada ticker/notica donde:
-```
-1 = Strongly Negative (Do not invest)
-3 = Neutral
-5 = Strongly Positive (Strong Buy)
-```
+  ```
+  1 = Strongly Negative (Do not invest)
+  3 = Neutral
+  5 = Strongly Positive (Strong Buy)
+  ```
 - `clean_new_model/`:
-  - `dataset_para_lstm.csv`: insumo para construir el dataset final.
-  - `dataset_ceci_sol/`: CSVs finales por ticker con features de precio + noticias (ej. `AAPL.csv`, `MSFT.csv`, …).
-  - `dfs_por_ticker_csv/`: salidas de resultados por ticker exportadas desde los experimentos.
+  - `dataset_para_lstm.csv`: input para construir el dataset final (en `sentiment_analysis.ipynb`).
+  - `dataset_ceci_sol/`: CSVs finales por ticker con features de precio + noticias (output de  `sentiment_analysis.ipynb`).
+  - `dfs_por_ticker_csv/`: salidas de resultados por ticker exportadas desde los experimentos (output de `experiments_clean.ipynb`).
   - `experiments_clean.ipynb`: notebook de experimentos; orquesta el pipeline y usa `lstm_pipeline.py`.
   - `sentiment_analysis.ipynb`: construye el dataset final de scores de noticias + datos financieros.
   - `lstm_pipeline.py`: implementación del modelo y utilidades de entrenamiento/evaluación en PyTorch.
