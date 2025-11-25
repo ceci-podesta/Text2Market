@@ -24,7 +24,7 @@ Proyecto para generar señales de noticias financieras y usarlas junto con datos
   - `dataset_ceci_sol/`: CSVs finales por ticker con features de precio + noticias (output de  `sentiment_analysis.ipynb`).
   - `dfs_por_ticker_csv/`: salidas de resultados por ticker exportadas desde los experimentos (output de `experiments_clean.ipynb`).
   - `experiments_clean.ipynb`: notebook de experimentos; orquesta el pipeline y usa `lstm_pipeline.py`.
-  - `sentiment_analysis.ipynb`: construye el dataset final de scores de noticias + datos financieros.
+  - `sentiment_analysis.ipynb`: construye el dataset final de scores de noticias + datos financieros. Para descargar los sentiments de FNSPID dirigirse [acá](https://github.com/Zdong104/FNSPID_Financial_News_Dataset/tree/main/dataset_test/LSTM-for-Time-Series-Prediction/data).
   - `lstm_pipeline.py`: implementación del modelo y utilidades de entrenamiento/evaluación en PyTorch.
 
 
@@ -46,7 +46,7 @@ Cada CSV por ticker en `clean_new_model/dataset_ceci_sol/` contiene columnas tí
 - Mercado: `Date`, `Adj Close`, `Close`, `High`, `Low`, `Open`, `Volume`, `VIX`
 - Sentimiento FinBERT: `puntaje_sent_fin_pos`, `puntaje_sent_fin_neu`, `puntaje_sent_fin_neg` (+`has_news`)
 - Señal Ollama: `recom_inv_llm` (+`has_news`)
-- Score ChatGPT del paper FNSPID: `Sentiment_gpt`, `News_flag`
+- Score ChatGPT del paper FNSPID: `Sentiment_gpt`, `News_flag`. Esta data no se incluye en este repo. Se puede descargar desde [acá](https://github.com/Zdong104/FNSPID_Financial_News_Dataset/tree/main/dataset_test/LSTM-for-Time-Series-Prediction/data)
 
 Nota: `Date` es opcional para el pipeline (se usa para alinear series y fechas en gráficos/salidas). `Adj Close` debe estar en las features porque es el objetivo de predicción.
 
