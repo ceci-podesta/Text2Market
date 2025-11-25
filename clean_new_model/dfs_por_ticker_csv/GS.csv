@@ -1,0 +1,6 @@
+features,MSE_mean,MSE_std,WMAPE_mean,WMAPE_std,Mejora MSE respecto a baseline (%)
+"recom_inv_llm, Adj Close, High, Low, Volume, VIX, has_news",17.77974932534354,1.2157489862276714,0.00813059787177802,0.0006148481458005806,63.15
+"puntaje_sent_fin_pos, puntaje_sent_fin_neg, Adj Close, High, Low, Volume, VIX, has_news",15.852960927145821,6.230176858181076,0.009553475366914529,0.002053233389040782,67.14
+"Adj Close, High, Low, Volume, VIX",48.24677767072405,10.453210904737682,0.01712195930693549,0.0025974940204483506,0.0
+"puntaje_sent_fin_pos, puntaje_sent_fin_neu, puntaje_sent_fin_neg, Adj Close, High, Low, Volume, VIX, has_news",248.77964891706193,15.942300253866174,0.0409853614753551,0.0018972232387499425,-415.64
+"recom_inv_llm, puntaje_sent_fin_pos, puntaje_sent_fin_neu, puntaje_sent_fin_neg, Adj Close, High, Low, Volume, VIX, has_news",9633.825474330357,106.07130164207581,0.18987880179719582,0.0032306383694606943,-19867.81
